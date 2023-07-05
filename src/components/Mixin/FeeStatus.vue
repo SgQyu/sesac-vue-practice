@@ -1,0 +1,27 @@
+<template>
+  <div>
+    <h2>합산된 요금 : {{ totalMoney }}원</h2>
+    <button @click="addMoney(50)">50원</button>
+    <button @click="addMoney(100)">100원</button>
+    <button @click="addMoney(150)">150원</button>
+    <button @click="addMoney(200)">200원</button>
+  </div>
+</template>
+
+<script>
+import useMoney from "../../composables/useMoney";
+
+export default {
+  name: "feeStatus",
+  setup() {
+    const { addMoney, totalMoney } = useMoney();
+
+    return {
+      addMoney,
+      totalMoney,
+    };
+  },
+};
+</script>
+
+<style></style>
